@@ -2,16 +2,55 @@ package com.amha.edu_dialog.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
 public class DialogMainActivity extends Activity {
 
+    //ViewPager that swipes between images.
+    ViewPager mPager;
+
+    //Static number of pages.
+    //private static int VIEW_PAGER_PAGES = 4;
+
+    //Page adapter populates the viewpager.
+    //CustomPageAdapter pageAdapter;
+
+    ImageFragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog_main);
+
+        // Check we're using the layout version of the frame. {Not sure why.}
+
+        if((findViewById(R.id.frame)) != null){
+
+            Log.d("AMHA-OUT", "Check 1");
+
+            // A fragment has already been created, no need to instantiate a new one.
+            if(savedInstanceState != null){
+                Log.d("AMHA-OUT", "Check 2");
+                return;
+            }
+
+            //Currently not working - may not need this either.
+            //fragment.newInstance("Lemon");
+
+            Bundle args = new Bundle();
+            args.putString("param1", "Default");
+
+            fragment = new ImageFragment();
+            fragment.setArguments(args);
+
+            getFragmentManager().beginTransaction()
+                    .add(R.id.frame, fragment).commit();
+        }
     }
 
 

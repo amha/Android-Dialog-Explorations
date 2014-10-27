@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">EDU_Dialog</string>
-    <string name="hello_world">Hello world!</string>
+    <!-- App Level -->
+    <string name="app_name">Dialog Play</string>
+
+    <!-- Action Bar -->
     <string name="action_settings">Settings</string>
+
+    <!-- Main Main Activity -->
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Temp</string>
 
 </resources>
