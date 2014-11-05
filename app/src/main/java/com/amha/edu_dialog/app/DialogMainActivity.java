@@ -2,55 +2,40 @@ package com.amha.edu_dialog.app;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 
 public class DialogMainActivity extends Activity {
 
-    //ViewPager that swipes between images.
-    ViewPager mPager;
+    // Debug identifier written to the console.
+    private final String TAG = "AMHA";
 
-    //Static number of pages.
-    //private static int VIEW_PAGER_PAGES = 4;
-
-    //Page adapter populates the viewpager.
-    //CustomPageAdapter pageAdapter;
-
-    ImageFragment fragment;
+    // List of dialog titles that have been implemented.
+    private final String[] dialog_list = {"Default","Fancy"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog_main);
 
-        // Check we're using the layout version of the frame. {Not sure why.}
+        // Setting up the adapter that will populate the list view.
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this,                                   // The application context.
+                android.R.layout.simple_list_item_1,    // Android defined layout.
+                dialog_list                             // Data source.
+                );
 
-        if((findViewById(R.id.frame)) != null){
 
-            Log.d("AMHA-OUT", "Check 1");
+        // Retrieving the list view and setting it's adapter.
+        ListView mList = (ListView)findViewById(R.id.list);
+        mList.setAdapter(adapter);
 
-            // A fragment has already been created, no need to instantiate a new one.
-            if(savedInstanceState != null){
-                Log.d("AMHA-OUT", "Check 2");
-                return;
-            }
 
-            //Currently not working - may not need this either.
-            //fragment.newInstance("Lemon");
-
-            Bundle args = new Bundle();
-            args.putString("param1", "Default");
-
-            fragment = new ImageFragment();
-            fragment.setArguments(args);
-
-            getFragmentManager().beginTransaction()
-                    .add(R.id.frame, fragment).commit();
-        }
     }
 
 

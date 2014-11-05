@@ -2,7 +2,7 @@
 <resources>
 
     <!-- App Level -->
-    <string name="app_name">Dialog Play</string>
+    <string name="app_name">Dialog Explorations</string>
 
     <!-- Action Bar -->
     <string name="action_settings">Settings</string>
