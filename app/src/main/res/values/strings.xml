@@ -11,4 +11,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Temp</string>
 
+    <!-- Alert Dialog 1 -->
+    <string name="postive_btn">OK</string>
+    <string name="negative_btn">Nope</string>
 </resources>

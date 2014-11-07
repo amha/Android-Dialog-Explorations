@@ -8,30 +8,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list"></ListView>
-    <!--<TextView-->
-        <!--android:text="@string/hello_world"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/textView"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="25dp"/>-->
-
-    <!--<FrameLayout-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="500dp"-->
-        <!--android:layout_below="@+id/textView"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:id="@+id/frame">-->
-
-        <!--&lt;!&ndash;<fragment-->
-                <!--android:layout_width="300dp"-->
-                <!--android:layout_height="300dp"-->
-                <!--android:name="com.amha.edu_dialog.app.ImageFragment"-->
-                <!--android:id="@+id/fragment_display"-->
-                <!--android:layout_marginTop="42dp"/>&ndash;&gt;-->
-    <!--</FrameLayout>-->
+        android:id="@+id/list"/>
 
 </RelativeLayout>
 
