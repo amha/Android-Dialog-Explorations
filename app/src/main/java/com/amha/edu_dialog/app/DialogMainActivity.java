@@ -2,6 +2,7 @@ package com.amha.edu_dialog.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +11,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 
-public class DialogMainActivity extends Activity {
+public class DialogMainActivity extends ActionBarActivity{
 
     // Debug identifier written to the console.
     private final String TAG = "AMHA";
 
     // List of dialog titles that have been implemented.
-    private final String[] dialog_list = {"Default","Fancy"};
+    private final String[] dialog_list = {"Alert Dialog 1","..."};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
