@@ -1,9 +1,11 @@
 package com.amha.edu_dialog.app;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,9 +13,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 
-public class DialogMainActivity extends Activity {
+public class DialogMainActivity extends ActionBarActivity {
 
     // Debug identifier written to the console.
     private final String TAG = "AMHA";
@@ -26,6 +29,24 @@ public class DialogMainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog_main);
 
+        // Toolbar setup
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        mToolbar.setTitleTextColor(getResources().getColor(R.color.black));
+        mToolbar.setSubtitle(getResources().getString(R.string.subtitle));
+
+        setSupportActionBar(mToolbar);
+
+
+        // Setup Spinner that controls which fragment is loaded.
+        Spinner mSpinner = (Spinner) findViewById(R.id.view_spinner);
+        mSpinner.setPadding(32, 5, 32, 5);
+        ArrayAdapter<CharSequence> spinner_adapter =
+                ArrayAdapter.createFromResource(
+                        this,
+                        R.array.component_list,
+                        R.layout.spinner_text
+                );
+        mSpinner.setAdapter(spinner_adapter);
 
         // TODO: Create custom layout for the list view.
         // Setting up the adapter that will populate the list view.
@@ -38,9 +59,9 @@ public class DialogMainActivity extends Activity {
 
         // Retrieving the list view and setting it's
         // adapter and click handler.
-        ListView mList = (ListView)findViewById(R.id.list);
-        mList.setAdapter(adapter);
-        mList.setOnItemClickListener(click_handler);
+//        ListView mList = (ListView)findViewById(R.id.list);
+//        mList.setAdapter(adapter);
+//        mList.setOnItemClickListener(click_handler);
 
     }
 
@@ -90,7 +111,7 @@ public class DialogMainActivity extends Activity {
         AlertDialog.Builder mBuilder= new AlertDialog.Builder(this);
         mBuilder.setTitle("Alert Dialog")
                 .setMessage("I'm an alert dialog, but don't call me an alarmist.")
-                .setPositiveButton(R.string.postive_btn, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.positive_btn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Log.d(TAG, "CLICKING FROM THE DIALOG.");

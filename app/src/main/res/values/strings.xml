@@ -2,16 +2,23 @@
 <resources>
 
     <!-- App Level -->
-    <string name="app_name">Dialog Explorations</string>
+    <string name="app_name">Notice</string>
+    <string name="subtitle">Dialogs &amp; Notifications</string>
 
     <!-- Action Bar -->
     <string name="action_settings">Settings</string>
 
     <!-- Main Main Activity -->
-    <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Temp</string>
 
     <!-- Alert Dialog 1 -->
-    <string name="postive_btn">OK</string>
+    <string name="positive_btn">OK</string>
     <string name="negative_btn">Nope</string>
+
+    <string-array name="component_list">
+        <item>Alert Dialogs</item>
+        <item>Custom Dialogs</item>
+        <item>Notifications</item>
+        <item>Android Wear Notifications</item>
+    </string-array>
 </resources>

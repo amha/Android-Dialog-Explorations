@@ -1,8 +1,14 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryDark">@color/dark_yellow</item>
+        <item name="spinnerStyle">@style/my_spinner</item>
     </style>
 
+    <style name="my_spinner" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:paddingRight">20dp</item>
+        <!--<item name="spinnerMode"></item>-->
+    </style>
 </resources>
